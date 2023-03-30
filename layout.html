@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #container{
+        display: grid;
+        grid-template-columns: 20% 1fr;
+        grid-template-rows: 2fr 500px 1fr;
+        grid-template-areas: 
+        "head header"
+        "cont content"
+        "foot footer"
+        ;
+        height: 100vh;
+        width: 100%;
+        background-color: aqua;
+    }    
+.cont{
+    border: 1px outset yellowgreen;
+}
+.head{
+    background-image: url(dore.jpg);
+    background-size: 100% 100%;
+    grid-area: content;
+}
+.btn{
+    cursor: grab;
+    background-color: blue;
+    border: outset black 2px;
+}
+#input{
+    width: 100%;
+}
+#cont{
+    grid-area: header;
+}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="img" class="head cont"></div>
+        <button onclick="change()" class="btn">Change!</button>
+    <div class="header cont"></div>
+    <div class="conte cont" id="cont">
+        <label for="input">Enter your specified field of Interest: </label>
+        <input type="text" id="input">
+    </div>
+    <div class="content cont"></div>
+    <div class="foot cont"></div>
+    <div class="footer cont"></div>
+    </div>
+    <script>
+        function change(){
+        let input = document.getElementById("input");
+        let cont = document.getElementById("cont");
+        img.style.gridArea = input.value;
+        };
+    </script>
+</body>
+</html>
